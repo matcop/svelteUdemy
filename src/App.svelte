@@ -1,8 +1,15 @@
 <script>
 import Contactcard from './Contactcard.svelte';
-  export let name;
-  export let age;
-console.log(age);
+  //export let name;
+  //export let age;
+
+  let name="maximilian";
+  let age=30;
+  let title="";
+  let description2="";
+  let image="";
+
+//console.log(age);
 $:uppercaseName=name.toUpperCase();
 $:console.log(name);
 $:if(name=='Maximo Decimo'){
@@ -53,9 +60,18 @@ $:if(name=='Maximo Decimo'){
 	<br>
 	<!-- <input type="text" value={name} on:input={nameInput}> -->
 	<input type="text" bind:value={name}/>
+  <input type="text" bind:value={title}/>
+  <input type="text" bind:value={image}/>
+  <textarea bind:value={description2} rows="2"></textarea>
 
 
-<Contactcard userName={name}/>
+<Contactcard 
+userName={name} 
+jobTitle={title} 
+
+description={description2}
+ 
+userImage={image}/>
 
 
 </main>
